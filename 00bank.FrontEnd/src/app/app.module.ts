@@ -9,15 +9,24 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { CreditInfoComponent } from './credit-info/credit-info.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
 
+const routes: Routes = [
+  {path: '', redirectTo: '', pathMatch:'full'},
+  {path: 'credit-info', component: CreditInfoComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreditInfoComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -25,9 +34,12 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatFormFieldModule,
+
   ],
   providers: [],
+  exports: [RouterModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,11 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  background-color: #e85757;
+}
+
 button {
   font-size: 16px;
   padding: 5px 10px;
@@ -8,4 +16,5 @@ button {
 
 button:hover {
   background-color: rgb(190, 180, 180);
+  border-radius: 10%;
 }
