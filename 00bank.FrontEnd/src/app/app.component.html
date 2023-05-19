@@ -1,0 +1,40 @@
+<div class="container">
+
+
+  <p>
+    <mat-toolbar color="primary">
+        <span><h1>00bank</h1></span>
+        <button mat-icon-button routerLink="#"><mat-icon>home</mat-icon>Início</button>
+        <button mat-button [matMenuTriggerFor]="menu">Produtos</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Empréstimo Pessoal</button>
+          <button mat-menu-item>Empréstimo Consignado</button>
+          <button mat-menu-item>Abertura de Conta Digital</button>
+        </mat-menu>
+        <button mat-button [matMenuTriggerFor]="menu">Cartões</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Cartões de Crédito</button>
+          <button mat-menu-item>Cartões de Débito</button>
+        </mat-menu>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-slide-toggle (click)="setDark()">Toggle me!</mat-slide-toggle>
+    </mat-toolbar>
+  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <router-outlet></router-outlet>
+</div>

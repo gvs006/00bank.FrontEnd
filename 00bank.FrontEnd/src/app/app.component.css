@@ -1,0 +1,11 @@
+button {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(190, 180, 180);
+}
