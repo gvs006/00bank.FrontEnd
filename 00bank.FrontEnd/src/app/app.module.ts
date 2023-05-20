@@ -1,3 +1,4 @@
+import { DebtInfoComponent } from './debt-info/debt-info.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,18 +13,28 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { CreditInfoComponent } from './credit-info/credit-info.component';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 
 const routes: Routes = [
   {path: '', redirectTo: '', pathMatch:'full'},
-  {path: 'credit-info', component: CreditInfoComponent}
+  {path: 'card-credit-info', component: CreditInfoComponent},
+  {path: 'card-debt-info', component: DebtInfoComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreditInfoComponent
+    CreditInfoComponent,
+    DebtInfoComponent,
+    LoginComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -36,6 +47,9 @@ const routes: Routes = [
     MatIconModule,
     MatSlideToggleModule,
     MatFormFieldModule,
+    MatCardModule,
+    MatInputModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

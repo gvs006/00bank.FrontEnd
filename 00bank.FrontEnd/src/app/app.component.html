@@ -1,32 +1,31 @@
+   <p>
+        <mat-toolbar>
+            <span>00bank</span>
+            <span class="spacer"></span>
+            <button mat-icon-button routerLink="/"><mat-icon>home</mat-icon></button>
+            <button mat-button [matMenuTriggerFor]="menu">Produtos</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>Empréstimo Pessoal</button>
+              <button mat-menu-item>Empréstimo Consignado</button>
+              <button mat-menu-item>Abertura de Conta Digital</button>
+            </mat-menu>
+            <button mat-button [matMenuTriggerFor]="cartoes">Cartões</button>
+            <mat-menu #cartoes="matMenu">
+              <button mat-menu-item routerLink="/card-credit-info">Cartões de Crédito</button>
+              <button mat-menu-item routerLink="/card-debt-info">Cartões de Débito</button>
+            </mat-menu>
+            <span class="spacer"></span>
+            <!--USER BUTTON-->
+            <button mat-icon-button [mat-menu-trigger-for]="user">
+              <mat-icon>menu</mat-icon>
+              <mat-menu #user="matMenu">
+                <button mat-menu-item routerLink="/login">Login</button>
+                <button mat-menu-item routerLink="/register">Registro</button>
+              </mat-menu>
+            </button>
+            <mat-slide-toggle (click)="setDarkMode()"></mat-slide-toggle>
+        </mat-toolbar>
+      </p>
+    <router-outlet></router-outlet>
 
-  <p>
-    <mat-toolbar>
-        <span>00bank</span>
-        <span class="spacer"></span>
-        <button mat-icon-button routerLink="/"><mat-icon>home</mat-icon></button>
-        <button mat-button [matMenuTriggerFor]="menu">Produtos</button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>Empréstimo Pessoal</button>
-          <button mat-menu-item>Empréstimo Consignado</button>
-          <button mat-menu-item>Abertura de Conta Digital</button>
-        </mat-menu>
-        <button mat-button [matMenuTriggerFor]="cartoes">Cartões</button>
-        <mat-menu #cartoes="matMenu">
-          <button mat-menu-item routerLink="/credit-info">Cartões de Crédito</button>
-          <button mat-menu-item routerLink="/debt-info">Cartões de Débito</button>
-        </mat-menu>
-        <span class="spacer"></span>
-
-        <!--USER BUTTON-->
-        <button mat-icon-button [mat-menu-trigger-for]="user">
-          <mat-icon>menu</mat-icon>
-          <mat-menu #user="matMenu">
-            <button mat-menu-item routerLink="/login">Login</button>
-            <button mat-menu-item routerLink="/register">Registro</button>
-          </mat-menu>
-        </button>
-        <mat-slide-toggle (click)="setDarkMode()">Toggle me!</mat-slide-toggle>
-    </mat-toolbar>
-  </p>
-  <router-outlet></router-outlet>
 

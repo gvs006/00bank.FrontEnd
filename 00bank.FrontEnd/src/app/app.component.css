@@ -1,9 +1,15 @@
 .spacer {
   flex: 1 1 auto;
 }
-
+header {
+  height: auto;
+}
 mat-toolbar {
-  background-color: #e85757;
+  background-color: #77D870;
+}
+
+mat-icon {
+  padding-top: 5px;
 }
 
 button {
@@ -12,9 +18,15 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  outline: none;
 }
 
 button:hover {
   background-color: rgb(190, 180, 180);
   border-radius: 10%;
+}
+
+button:focus{
+  border: none;
+  background-color: none;
 }
