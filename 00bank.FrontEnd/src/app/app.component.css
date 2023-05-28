@@ -17,12 +17,11 @@ button {
   background-color: transparent;
   cursor: pointer;
   outline: none;
-  padding-top: 5px;
+  padding: 5px,0px,5px,0px;
 }
 
 button:hover {
   background-color: rgb(190, 180, 180);
-  border-radius: 10%;
 }
 
 button:focus{

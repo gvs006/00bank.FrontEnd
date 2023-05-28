@@ -1,29 +1,35 @@
-<div class="col-12 logo">
-  <h1>00bank - Tela de Login</h1>
-</div>
-<div class="login-container">
-<form class="form">
-  <mat-form-field class="full-width">
-    <mat-label>Email</mat-label>
-    <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
-           placeholder="exemplo@exemplo.com">
-    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-      Por favor, insira um email válido.
-    </mat-error>
-    <mat-error *ngIf="emailFormControl.hasError('required')">
-      Este campo é <strong>obrigatório.</strong>
-    </mat-error>
-  </mat-form-field><br>
-  <mat-form-field class="full-width">
-    <mat-label>Senha</mat-label>
-    <input type="password" matInput [formControl]="senhaFormControl" [errorStateMatcher]="matcher"
-           placeholder="">
-    <mat-error *ngIf="senhaFormControl.hasError('senha') && !senhaFormControl.hasError('required')">
-      Por favor, insira uma senha válida. A senha deve ter de 1 a 16 caracteres e deve conter pelo menos um símbolo especial, um número, uma letra maiúscula e uma letra minúscula.
-    </mat-error>
-    <mat-error *ngIf="emailFormControl.hasError('required')">
-      Este campo é <strong>obrigatório.</strong>
-    </mat-error>
-  </mat-form-field>
-</form>
-</div>
+<body class="login-body">
+  <div class="col-12 logo">
+    <h1>00bank - Tela de Login</h1>
+  </div>
+  <div class="login-container">
+  <form [formGroup]="myForm" (ngSubmit)="fazerLogin()" ngform class="form">
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+             placeholder="exemplo@exemplo.com">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Por favor, insira um email válido.
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Este campo é <strong>obrigatório.</strong>
+      </mat-error>
+    </mat-form-field><br>
+    <mat-form-field class="full-width">
+      <mat-label>Senha</mat-label>
+      <input type="password" matInput [formControl]="senhaFormControl" [errorStateMatcher]="matcher"
+             placeholder="Senha">
+      <mat-error *ngIf="senhaFormControl.hasError('senha') && !senhaFormControl.hasError('required')">
+        Por favor, insira uma senha válida. A senha deve ter de 1 a 16 caracteres e deve conter pelo menos um símbolo especial, um número, uma letra maiúscula e uma letra minúscula.
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Este campo é <strong>obrigatório.</strong>
+      </mat-error>
+    </mat-form-field>
+    <button mat-flat-button class="loginBtn" type="submit"><mat-icon>trending_flat</mat-icon></button>
+  </form>
+
+  </div>
+
+</body>
+

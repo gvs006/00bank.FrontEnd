@@ -17,6 +17,12 @@ import { LoginComponent } from './login/login.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginAuthService } from './services/login-auth.service';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 
@@ -26,7 +32,9 @@ const routes: Routes = [
   {path: '', redirectTo: '', pathMatch:'full'},
   {path: 'card-credit-info', component: CreditInfoComponent},
   {path: 'card-debt-info', component: DebtInfoComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'dashboard', component: DashboardComponent}
 ];
 
 @NgModule({
@@ -34,7 +42,9 @@ const routes: Routes = [
     AppComponent,
     CreditInfoComponent,
     DebtInfoComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    RegisterComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -49,10 +59,12 @@ const routes: Routes = [
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
-    ReactiveFormsModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [LoginAuthService],
   exports: [RouterModule],
   bootstrap: [AppComponent]
 })
